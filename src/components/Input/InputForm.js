@@ -1,33 +1,42 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import styles from "./InputForm.module.css";
 
 const Input = () => {
-  const [problemName, setProblemName] = useState("");
-  const [problemSolution, setProblemSolution] = useState("");
-  const [problemComplexity, setProblemComplexity] = useState("");
+  const problemName = useRef();
+  const problemSolution = useRef();
+  const problemComplexity = useRef();
 
-  const saveDataToJson = (data, file) => {
-    const saveFinished = (error) => {
-      if (error) {
-        console.log(error);
-        return;
-      }
-    };
-    const jsonData = JSON.stringify(data);
-    // fs.writeFile(file, jsonData, saveFinished);
-  };
-  const handleSubmit = (e) => {
-    console.log(problemName, problemSolution, problemComplexity);
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setProblemName("");
-    setProblemSolution("");
-    setProblemComplexity("");
-    const dog = {
-      name: "dolly",
-      breed: "street",
-      color: "grey",
-    };
-    saveDataToJson(dog, "problemData.json");
+
+    //  localStorage.removeItem("problems");
+    const existingProblemsFromStorage = JSON.parse(
+      localStorage.getItem("problems")
+    );
+
+    console.log(existingProblemsFromStorage);
+
+    let problems =
+      existingProblemsFromStorage && existingProblemsFromStorage.length > 0
+        ? existingProblemsFromStorage
+        : [];
+
+    if (
+      problems.some((problem) => problem.probName === problemName.current.value)
+    ) {
+      alert("Object found inside the array.");
+    } else {
+      problems.push({
+        probName: problemName.current.value,
+        probSolution: problemSolution.current.value,
+        probComplexity: problemComplexity.current.value,
+      });
+      localStorage.setItem("problems", JSON.stringify(problems));
+    }
+    problemName.current.value =
+      problemSolution.current.value =
+      problemComplexity.current.value =
+        "";
   };
   return (
     <form
@@ -38,25 +47,22 @@ const Input = () => {
     >
       <input
         type="text"
-        name="problemName"
-        value={problemName}
-        onChange={(e) => setProblemName(e.target.value)}
+        name="name"
+        ref={problemName}
         placeholder="Enter Problem Name"
         required
       />
       <input
         type="text"
-        name="problemSolution"
-        value={problemSolution}
-        onChange={(e) => setProblemSolution(e.target.value)}
+        name="solution"
+        ref={problemSolution}
         placeholder="Enter Problem Solution"
         required
       />
       <input
         type="text"
-        name="problemComplexity"
-        value={problemComplexity}
-        onChange={(e) => setProblemComplexity(e.target.value)}
+        name="complexity"
+        ref={problemComplexity}
         placeholder="Enter Problem Complexity"
         required
       />
