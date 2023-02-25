@@ -1,11 +1,11 @@
 import React from "react";
-import Input from "../components/Input/Input";
+import InputForm from "../components/Input/InputForm";
 import Layout from "../components/Layout/Layout";
 
 const Home = () => {
   return (
     <>
-      <Input></Input>
+      <InputForm></InputForm>
       <Layout></Layout>
     </>
   );
