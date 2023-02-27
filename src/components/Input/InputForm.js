@@ -9,12 +9,10 @@ const Input = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //  localStorage.removeItem("problems");
+    // localStorage.removeItem("problems");
     const existingProblemsFromStorage = JSON.parse(
       localStorage.getItem("problems")
     );
-
-    console.log(existingProblemsFromStorage);
 
     let problems =
       existingProblemsFromStorage && existingProblemsFromStorage.length > 0
