@@ -37,6 +37,7 @@ const Input = () => {
       problemSolution.current.value =
       problemComplexity.current.value =
         "";
+    window.location.reload(false);
   };
   return (
     <form

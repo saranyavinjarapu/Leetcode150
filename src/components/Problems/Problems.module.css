@@ -1,9 +1,16 @@
-.ProblemItemsContainer {
+.Problems {
+  border: 2px solid green;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+}
+.ProblemListContainer {
   display: flex;
   flex: 1;
-  border: 1px solid gray;
+  border: 4px solid grey;
   padding: 10px;
-  justify-content: space-around;
+  overflow-y: scroll;
+  height: 300px;
 }
 
 .ProblemName {
@@ -23,8 +30,45 @@
 button {
   background-color: blue;
   color: white;
-  padding: 14px 12px;
+  padding: 8px 8px;
   border-radius: 20px;
-  font-size: 20px;
+  font-size: 14px;
   opacity: 70%;
+}
+
+.problemDescriptionContainer {
+  border: 1px solid gray;
+  flex: 1;
+  margin-left: 10px;
+  min-height: 170px;
+  height: 325px;
+}
+
+.ProblemsList {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ProblemsList td,
+.ProblemsList th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.ProblemsList tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.ProblemsList tr:hover {
+  background-color: #ddd;
+}
+
+.ProblemsList th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
 }
