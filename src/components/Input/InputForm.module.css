@@ -11,6 +11,10 @@
   min-height: 100px;
 }
 
+.Input input[name="name"] {
+  min-width: 150px;
+}
+
 input::placeholder {
   opacity: 1; /* Firefox */
   font-size: 20px;
