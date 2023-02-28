@@ -1,16 +1,10 @@
-.Problems {
-  border: 2px solid green;
-  margin: 10px;
-  padding: 20px;
-  display: flex;
-}
 .ProblemListContainer {
   display: flex;
   flex: 1;
-  border: 4px solid grey;
-  padding: 10px;
+  border: 1px solid grey;
   overflow-y: scroll;
-  height: 300px;
+  min-height: 300px;
+  margin: 10px;
 }
 
 .ProblemsList {
@@ -57,12 +51,4 @@ button {
   border-radius: 20px;
   font-size: 14px;
   opacity: 70%;
-}
-
-.problemDescriptionContainer {
-  border: 1px solid gray;
-  flex: 1;
-  margin-left: 10px;
-  min-height: 170px;
-  height: 325px;
 }
