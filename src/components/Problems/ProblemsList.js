@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Problems.module.css";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProblemsList = () => {
-  const navigate = useNavigate();
   const [problems, setProblems] = useState([]);
   useEffect(() => {
     const existingProblemsFromStorage = JSON.parse(
@@ -28,7 +27,7 @@ const ProblemsList = () => {
                 <td>{problem.probName}</td>
                 <td>{problem.probName}</td>
                 <td>
-                  <Link to="/Solution" target="_blank">
+                  <Link to="/Detail" target="_blank">
                     <button>Solution</button>
                   </Link>
                 </td>
