@@ -15,6 +15,7 @@ const ProblemsList = () => {
       <table className={styles.ProblemsList}>
         <thead>
           <tr>
+            <th>Action</th>
             <th>Problem</th>
             <th>Problem Description</th>
             <th>Solution</th>
@@ -23,9 +24,9 @@ const ProblemsList = () => {
         <tbody>
           {problems &&
             problems.map((problem) => (
-              <tr key={problem.probName}>
+              <tr key={problem.probId}>
                 <td>{problem.probName}</td>
-                <td>{problem.probName}</td>
+                <td>{problem.probDescription}</td>
                 <td>
                   <Link to={`/detail/${problem.probId}`} target="_blank">
                     <button>Solution</button>
