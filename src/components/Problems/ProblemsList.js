@@ -27,7 +27,7 @@ const ProblemsList = () => {
                 <td>{problem.probName}</td>
                 <td>{problem.probName}</td>
                 <td>
-                  <Link to="/Detail" target="_blank">
+                  <Link to={`/detail/${problem.probId}`} target="_blank">
                     <button>Solution</button>
                   </Link>
                 </td>

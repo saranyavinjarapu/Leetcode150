@@ -10,7 +10,7 @@ const Input = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // localStorage.removeItem("problems");
+    localStorage.removeItem("problems");
     const existingProblemsFromStorage = JSON.parse(
       localStorage.getItem("problems")
     );
@@ -26,6 +26,7 @@ const Input = () => {
       alert("Object found inside the array.");
     } else {
       problems.push({
+        probId: problemName.current.value.replace(/ /g, "_"),
         probName: problemName.current.value,
         probDescription: problemDescription.current.value,
         probSolution: problemSolution.current.value,
