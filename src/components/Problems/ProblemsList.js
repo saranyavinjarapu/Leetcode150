@@ -4,6 +4,15 @@ import { Link } from "react-router-dom";
 
 const ProblemsList = () => {
   const [problems, setProblems] = useState([]);
+
+  const deleteProblem = (problemIdToBeDeleted) => {
+    problems.splice(
+      problems.findIndex((el) => el.probId === problemIdToBeDeleted),
+      1
+    );
+    localStorage.setItem("problems", JSON.stringify(problems));
+    window.location.reload(false);
+  };
   useEffect(() => {
     const existingProblemsFromStorage = JSON.parse(
       localStorage.getItem("problems")
@@ -25,6 +34,13 @@ const ProblemsList = () => {
           {problems &&
             problems.map((problem) => (
               <tr key={problem.probId}>
+                <td>
+                  <i
+                    className="fa fa-trash"
+                    aria-hidden="true"
+                    onClick={() => deleteProblem(problem.probId)}
+                  ></i>
+                </td>
                 <td>{problem.probName}</td>
                 <td>{problem.probDescription}</td>
                 <td>
