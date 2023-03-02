@@ -8,11 +8,11 @@ const Solution = (props) => {
   useEffect(() => {
     const solutionByProblemId = JSON.parse(
       localStorage.getItem("problems")
-    ).filter((value) => value.probId == problemId)[0];
+    ).filter((value) => value.probId === problemId)[0];
 
     console.log(solutionByProblemId);
     setSolution(solutionByProblemId);
-  }, []);
+  }, [problemId]);
   return (
     <div className={styles.SolutionContainer}>
       <div className={styles.SolutionItemHeader}>Problem</div>
