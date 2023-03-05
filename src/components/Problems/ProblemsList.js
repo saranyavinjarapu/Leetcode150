@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Problems.module.css";
+import globalStyles from "../../styles/Globals.module.css";
 import { Link } from "react-router-dom";
 
 const ProblemsList = () => {
@@ -21,7 +22,7 @@ const ProblemsList = () => {
   }, []);
   return (
     <div className={styles.ProblemListContainer}>
-      <table className={styles.ProblemsList}>
+      <table className={globalStyles.Table}>
         <thead>
           <tr>
             <th>Action</th>

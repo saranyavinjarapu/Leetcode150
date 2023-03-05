@@ -1,0 +1,28 @@
+.Table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 0;
+}
+
+.Table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.Table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.Table tr:hover {
+  background-color: #ddd;
+}
+
+.Table th {
+  padding: 8px;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
+  border: 1px solid #ddd;
+}

@@ -1,29 +1,26 @@
 .SolutionContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 10px;
-  align-items: start;
-}
-.SolutionItemHeader {
-  font-size: 25px;
-  text-align: center;
-  width: 100%;
-  background-color: #04aa6d;
-  color: white;
-  border: 1px solid black;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
-.SolutionItem {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid black;
+.ProblemTable {
   font-size: 20px;
-  text-align: left;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  min-height: 90px;
-  overflow: auto;
+  font-family: "Inter";
+  height: 0.1rem;
+}
+
+.ProblemDescription {
+  width: 500px;
+  padding: 20px !important;
+  text-align: left !important;
+}
+
+.SolutionTable {
+  font-size: 20px;
+  font-family: "Inter";
+}
+
+.SolutionRow {
+  height: 10px !important;
+  overflow: scroll;
 }

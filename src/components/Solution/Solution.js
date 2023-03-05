@@ -1,9 +1,44 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Solution.module.css";
+import globalStyles from "../../styles/Globals.module.css";
 
 const Solution = (props) => {
   const { problemId } = props;
   const [solution, setSolution] = useState([]);
+
+  const t1 = `body padding: 50px font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+  grid 
+    border px solid rgb(111,41,97);
+    display grid
+    grid-template-areas
+      "one one one two"
+      "one one two two"
+      "three three four four"
+      "three three four four";
+    gap: 10px
+    grid-template-columnsrepeat(4, 1fr);
+    grid-template-rowsrepeat(4, 100px);
+    inline-size 500px;
+  }
+  
+  .grid > * {
+    background-color: rgba(111,41,97,.4);
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .one {
+    grid-area: one;
+  } 
+  .two {
+    grid-area: two;
+  }
+  .three {
+    grid-area: three;
+  }
+  .four {
+    grid-area: four;
+  }`;
 
   useEffect(() => {
     const solutionByProblemId = JSON.parse(
@@ -15,22 +50,44 @@ const Solution = (props) => {
   }, [problemId]);
   return (
     <div className={styles.SolutionContainer}>
-      <div className={styles.SolutionItemHeader}>Problem</div>
-      <div className={styles.SolutionItemHeader}>Problem Description</div>
-      <div className={styles.SolutionItem}>{solution.probName}</div>
-      <div className={styles.SolutionItem}>{solution.probDescription}</div>
-      <div className={styles.SolutionItemHeader}>Initial Solution</div>
-      <div className={styles.SolutionItemHeader}>Best Solution</div>
-      <div className={styles.SolutionItem}>7</div>
-      <div className={styles.SolutionItem}>8</div>
-      <div className={styles.SolutionItemHeader}>Initial Complexity</div>
-      <div className={styles.SolutionItemHeader}>Best Complexity</div>
-      <div className={styles.SolutionItem}>7</div>
-      <div className={styles.SolutionItem}>8</div>
-      <div className={styles.SolutionItemHeader}>Thoughts</div>
-      <div className={styles.SolutionItemHeader}>Notes</div>
-      <div className={styles.SolutionItem}>9</div>
-      <div className={styles.SolutionItem}>10</div>
+      <table className={globalStyles.Table + " " + styles.ProblemTable}>
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Problem Description</th>
+            <th>Difficulty Level</th>
+            <th>Problem Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{solution.probName}</td>
+            <td className={styles.ProblemDescription}>
+              {solution.probDescription}
+            </td>
+            <td style={{ width: "30px" }}>Difficult</td>
+            <td>Link</td>
+          </tr>
+        </tbody>
+      </table>
+      <table className={globalStyles.Table + " " + styles.SolutionTable}>
+        <thead>
+          <tr>
+            <th>Initial Solution</th>
+            <th>Initial Complexity</th>
+            <th>Best Solution</th>
+            <th>Best Complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{t1}</td>
+            <td>help</td>
+            <td>{t1}</td>
+            <td>Link</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

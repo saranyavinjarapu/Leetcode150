@@ -7,36 +7,6 @@
   margin: 10px;
 }
 
-.ProblemsList {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 0;
-}
-
-.ProblemsList td,
-.ProblemsList th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-}
-
-.ProblemsList tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.ProblemsList tr:hover {
-  background-color: #ddd;
-}
-
-.ProblemsList th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #04aa6d;
-  color: white;
-}
-
 .ProblemName {
   border: 1px solid lightgray;
   flex: 1;
