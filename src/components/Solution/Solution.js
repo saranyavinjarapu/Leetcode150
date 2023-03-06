@@ -81,10 +81,40 @@ const Solution = (props) => {
         </thead>
         <tbody>
           <tr>
-            <td>{t1}</td>
-            <td>help</td>
-            <td>{t1}</td>
-            <td>Link</td>
+            <td>
+              <div className={styles.SolutionDescription}>
+                {t1}
+                {t1}
+                {t1}
+              </div>
+            </td>
+            <td style={{ width: "30px" }}>I Complexity</td>
+            <td>
+              <div className={styles.SolutionDescription}>
+                {t1}
+                {t1}
+                {t1}
+              </div>
+            </td>
+            <td style={{ width: "30px" }}>B complexity</td>
+          </tr>
+        </tbody>
+      </table>
+      <table className={globalStyles.Table + " " + styles.NotesTable}>
+        <thead>
+          <tr>
+            <th>Thoughts</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div className={styles.SolutionDescription}>I Solution</div>
+            </td>
+            <td>
+              <div className={styles.SolutionDescription}>B solution</div>
+            </td>
           </tr>
         </tbody>
       </table>
